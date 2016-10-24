@@ -1,0 +1,30 @@
+{
+  "name": "friendsfinder_node_express_app",
+  "version": "1.0.0",
+  "description": "basic dating app created as an assignment for the UT Coding Bootcamp",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nfinley/FriendFinder_Node_Express_App.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "dating",
+    "app"
+  ],
+  "author": "Nigel Finley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nfinley/FriendFinder_Node_Express_App/issues"
+  },
+  "homepage": "https://github.com/Nfinley/FriendFinder_Node_Express_App#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}
