@@ -20,6 +20,32 @@
 </head>
 
 <body>
+<!-- MODAL THAT DISPLAYS THE MATCH -->
+<div class="modal fade" id="personModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title text-center"><i class="fa fa-thumbs-o-up"></i> Your Match Awaits <i class="fa fa-thumbs-o-up"></i> </h3>
+      </div>
+      <div class="modal-body">
+        <h4 class="text-center">Hi I am: </h4>
+        <h3 class="text-center" id="matchName"></h3>
+
+        <div id="insertPhoto">
+        <!-- INSERT THE PHOTO HERE -->
+        
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-purple">Enjoy</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
     <!-- Jumbo Page Heading -->
     <div class="jumbotron">
         <div class="container text-center">
@@ -116,31 +142,39 @@
     <!-- Custom js code -->
     <!-- <script src="../../server.js "></script> -->
     <!-- Backstretch js plugin, for page background -->
-    <!--     <script src="assets/js/backstretch_plugin.min.js "></script>
-        <script>
+     <!-- <script src="assets/backstretch.js"></script> -->
+<!--         <script>
     $(document).ready(function() {
         $('#main').backstretch("assets/img/cust.jpg ");
     });
     </script> -->
     <script type="text/javascript ">
+
+    // $('#personModal').modal('show');   
     $('#addBtn').on('click', function() {
         // initializes an intial array to store the selected scores
         var answersArray = [];
+        var scoreSum = 0;
         // create a jquery .each function to create an array of the scres
         $('.questions').each(function(index, value) {
             var selection = $(this).val();
+            scoreSum = scoreSum + parseInt(selection);
+
             // pushing each selection to the array
             answersArray.push(selection);
         });
+        // return scoreSum;
+        console.log("Here is the the total score of the user input: " , scoreSum);
 
         // console.log("answersArray", answersArray);
         var newUser = {
             name: $('#userName').val().trim(),
             photo: $('#photoID').val().trim(),
-            scores: answersArray
+            scores: answersArray,
+            scoreSum: scoreSum
 
         };
-        console.log("Newuser: ", newUser);
+        // console.log("Newuser: ", newUser);
         var currentURL = window.location.origin;
 
         // This takes the html input and sends it to the app.post route
@@ -149,8 +183,13 @@
                 $('input').val(" ");
                 $('select').val(" ");
                 // alert("TEST ");
-                console.log(data);
-                alert("Thanks for taking the survey")
+                console.log("data: " + JSON.stringify(data.photo));
+                // alert("Thanks for taking the survey")
+                var image  = $('<img src="'+ data.photo + '" width="100%" height="auto" alt="match-person">');
+                $('#insertPhoto').append(image);
+                $('#matchName').append(data.name);
+                // $('#insertPhoto').backstretch(data.photo);
+                $('#personModal').modal('show'); 
 
             });
 

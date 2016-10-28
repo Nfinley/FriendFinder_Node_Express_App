@@ -20,32 +20,44 @@ module.exports = function(app) {
         var newUser = req.body;
 
         // pushing to the array in order view with the api/friends
-        friends.users.push(newUser);
+       
 
-        var prevScore = 0;
+        var totalDifference = 0;
         var personIndex = 0;
         friends.users.forEach(function(obj, index) {
-
             var currentScore = 0;
-            obj.scores.forEach(function(score) {
-                currentScore += Math.abs(newUser.scores[index] - score);
-                console.log("Current Score: " + currentScore, "Current Index: " + index);
+            // var sum = obj.scores.reduce(function(a, b){
+            //     return a + b;
 
-            });
+            
+            // }, 0);   
+            // console.log(index  + " then sum: " + sum);         
+            currentScore += Math.abs(newUser.scoreSum - parseInt(obj.scoreSum));
+            // 
+            console.log("first for each furrent score: ", obj.scoreSum);
+            console.log("result of first abs", currentScore);
             if(index == 0){
-            	prevScore = currentScore;
+            	totalDifference = currentScore;
             	personIndex = index;
             }
-            if (prevScore > currentScore) {
-                prevScore = currentScore;
+            if (totalDifference > currentScore) {
+                totalDifference = currentScore;
                 personIndex = index;
-                console.log("pscore: ", prevScore, "pI: ", personIndex);
+                console.log("In if pscore: ", totalDifference);
             }
-        })
-        console.log('final score: '+ prevScore);
-        console.log('final index: '+ personIndex);
+        });
+        console.log('final score: '+ totalDifference);
+        console.log('index winner: '+ personIndex);
 
-        res.status(201).send();
+         friends.users.push(newUser);
+         res.send(friends.users[personIndex]);
+        // res.status(201).send();
     });
 
+    // create an image route to get the image  and then pass it into the bootstrap modal
+    // app.get('/:photo', function(req, res) {
+    //     res.json(friends.users);
+    //     console.log(friends.users);
+    //     // res.status(201).send();
+    // });
 }

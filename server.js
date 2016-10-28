@@ -21,20 +21,20 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use('/css', express.static(__dirname + '/app/public/css'));
 
+
+var exphbs = require('express-handlebars');
+app.engine('handlebars', exphbs({ defaultLayout: 'survey' }));
+app.set('view engine', 'handlebars');
+
 // Requiring other files
-require('./app/routing/html-routes.js')(app, path);
+// require('./app/routing/html-routes.js')(app);
 require('./app/routing/api-routes.js')(app);
 
-// app.use('/', htmlRoutes);
+// ===== When using ROUTER =====
+var htmlRoutes = require('./app/routing/html-routes.js');
+app.use('/', htmlRoutes);
 
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, function(err) {
-    if (err) {
-        console.log(err);
-    }
-    console.log('App listening on PORT ' + PORT);
-});
+
 
  // ============================================================
 
@@ -50,7 +50,10 @@ app.listen(PORT, function(err) {
 //     customerID: 3
 // }];
 
-
+// // route to take users to the survey page
+// app.get('/', function(req, res) {
+//     res.render('survey', {customers});
+// });
 
 // app.get('/api/friends', function(req, res){
 // 	res.json(customers);
@@ -70,3 +73,11 @@ app.listen(PORT, function(err) {
 
 
 
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function(err) {
+    if (err) {
+        console.log(err);
+    }
+    console.log('App listening on PORT ' + PORT);
+});
