@@ -53,11 +53,4 @@ module.exports = function(app) {
          res.send(friends.users[personIndex]);
         // res.status(201).send();
     });
-
-    // create an image route to get the image  and then pass it into the bootstrap modal
-    // app.get('/:photo', function(req, res) {
-    //     res.json(friends.users);
-    //     console.log(friends.users);
-    //     // res.status(201).send();
-    // });
 }

@@ -20,32 +20,41 @@
 </head>
 
 <body>
-<!-- MODAL THAT DISPLAYS THE MATCH -->
-<div class="modal fade" id="personModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title text-center"><i class="fa fa-thumbs-o-up"></i> Your Match Awaits <i class="fa fa-thumbs-o-up"></i> </h3>
-      </div>
-      <div class="modal-body">
-        <h4 class="text-center">Hi I am: </h4>
-        <h3 class="text-center" id="matchName"></h3>
-
-        <div id="insertPhoto">
-        <!-- INSERT THE PHOTO HERE -->
-        
+<style type="text/css">
+    
+html {
+    background: url(http://res.cloudinary.com/thefinleycode/image/upload/v1477718433/tulips-65036_1920_rlyslx.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+</style>
+    <!-- MODAL THAT DISPLAYS THE MATCH -->
+    <div class="modal fade" id="personModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title text-center"><i class="fa fa-thumbs-o-up"></i> Your Match Awaits <i class="fa fa-thumbs-o-up"></i> </h3>
+                </div>
+                <div class="modal-body">
+                    <h3 class="text-center" id="matchName"></h3>
+                    <br>
+                    <div id="insertPhoto">
+                        <!-- INSERT THE PHOTO HERE -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-purple">Enjoy</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-purple">Enjoy</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
     <!-- Jumbo Page Heading -->
     <div class="jumbotron">
         <div class="container text-center">
@@ -64,68 +73,156 @@
         </div>
     </div>
     <br>
-    <!-- Will house the survey question -->
-    <section class="container-fluid" id="main" style="height: 500px;">
-        <h2>About You</h2>
-        <form>
-            <div class="form-group">
-                <!-- Need to make this field required -->
-                <label for="userName">Name(Required)</label>
-                <input type="text" class="form-control" id="userName" placeholder="Your Full Name">
+    <div id="surveyPhoto">
+    <div class="container mainBody" >
+        <!-- Will house the survey question -->
+        <section class="container-fluid" id="main" style="height: 500px;">
+            <h2>About You</h2>
+            <form>
+                <div class="form-group">
+                    <!-- Need to make this field required -->
+                    <label for="userName">Name(Required)</label>
+                    <input type="text" class="form-control inputField" id="userName" placeholder="Your Full Name">
+                </div>
+                <div class="form-group">
+                    <label for="photoID">Link to your Photo (Required)</label>
+                    <input type="text" class="form-control inputField" id="photoID" placeholder="link to your photo">
+                </div>
+                <hr>
+                <!-- QUESTIONS -->
+                <div>
+                    <h2>Question 1</h2>
+                    <h4>How likely are you to live by the ocean?</h4>
+                    <select class="form-control questions">
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+                <!--  <div>
+            <h2>Question7777</h2>
+            <label class="radio-inline questions"><input type="radio" name="optradio" value="1">Option 1</label>
+            <label class="radio-inline"><input type="radio" name="optradio" value="2">Option 2</label>
+            <label class="radio-inline"><input type="radio" name="optradio" value="3" >Option 3</label>
             </div>
-            <div class="form-group">
-                <label for="photoID">Link to your Photo (Required)</label>
-                <input type="text" class="form-control" id="photoID" placeholder="link to your photo">
+            <div> -->
+                <div>
+                    <h2>Question 2</h2>
+                    <h4>Do You Like Dogs?</h4>
+                    <select class="form-control questions">
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+                <div>
+                    <h2>Question 3</h2>
+                    <h4>Do You Like Dogs?</h4>
+                    <select class="form-control questions">
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+                <div>
+                    <h2>Question 3</h2>
+                    <h4>Do You Like Dogs?</h4>
+                    <select class="form-control questions">
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+                <div>
+                    <h2>Question 3</h2>
+                    <h4>Do You Like Dogs?</h4>
+                    <select class="form-control questions">
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+                <div>
+                    <h2>Question 3</h2>
+                    <h4>Do You Like Dogs?</h4>
+                    <select class="form-control questions">
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+                <div>
+                    <h2>Question 3</h2>
+                    <h4>Do You Like Dogs?</h4>
+                    <select class="form-control questions">
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+                <div>
+                    <h2>Question 3</h2>
+                    <h4>Do You Like Dogs?</h4>
+                    <select class="form-control questions">
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+                <div>
+                    <h2>Question 3</h2>
+                    <h4>Do You Like Dogs?</h4>
+                    <select class="form-control questions">
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+                <div>
+                    <h2>Question 3</h2>
+                    <h4>Do You Like Dogs?</h4>
+                    <select class="form-control questions">
+                        <option value="1">1 (Strongly Agree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Disagree)</option>
+                    </select>
+                </div>
+            </form>
+            <br>
+            <div class="text-left">
+                <button type="submit" class="btn btn-primary btn-purple" id="addBtn">
+                    </span> Submit</button>
             </div>
-            <hr>
-            <!-- QUESTIONS -->
-            <div>
-                <h2>Question 1</h2>
-                <h4>How likely are you to live by the ocean?</h4>
-                <select class="form-control questions">
-                    <option value="1">1 (Strongly Agree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Disagree)</option>
-                </select>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="/api/friends"> API Friends List </a> |
+                    <a href="https://github.com/Nfinley/FriendFinder_Node_Express_App"> GitHub Repo </a>
+                </div>
             </div>
-            <div>
-                <h2>Question 2</h2>
-                <h4>Do You Like Dogs?</h4>
-                <select class="form-control questions">
-                    <option value="1">1 (Strongly Agree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Disagree)</option>
-                </select>
-            </div>
-            <div>
-                <h2>Question 3</h2>
-                <h4>Do You Like Dogs?</h4>
-                <select class="form-control questions">
-                    <option value="1">1 (Strongly Agree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Disagree)</option>
-                </select>
-            </div>
-        </form>
-        <br>
-        <div class="text-left">
-            <button type="submit" class="btn btn-primary btn-purple" id="addBtn">
-                </span> Submit</button>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-sm-12">
-                <a href="/api/friends"> API Friends List </a> |
-                <a href="https://github.com/Nfinley/FriendFinder_Node_Express_App"> GitHub Repo </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
+    </div>
     <!--     <footer class="container-fluid" id="footer" style="height: 500px;" ">
         <div class="row ">
             <div class="col-sm-12 ">
@@ -142,16 +239,17 @@
     <!-- Custom js code -->
     <!-- <script src="../../server.js "></script> -->
     <!-- Backstretch js plugin, for page background -->
-     <!-- <script src="assets/backstretch.js"></script> -->
-<!--         <script>
+    <!-- <script src="assets/backstretch.js"></script> -->
+    <!--         <script>
     $(document).ready(function() {
         $('#main').backstretch("assets/img/cust.jpg ");
     });
     </script> -->
     <script type="text/javascript ">
-
     // $('#personModal').modal('show');   
     $('#addBtn').on('click', function() {
+        $('#insertPhoto').val(" ");
+        $('#matchName').val(" ");
         // initializes an intial array to store the selected scores
         var answersArray = [];
         var scoreSum = 0;
@@ -164,7 +262,7 @@
             answersArray.push(selection);
         });
         // return scoreSum;
-        console.log("Here is the the total score of the user input: " , scoreSum);
+        console.log("Here is the the total score of the user input: ", scoreSum);
 
         // console.log("answersArray", answersArray);
         var newUser = {
@@ -185,11 +283,11 @@
                 // alert("TEST ");
                 console.log("data: " + JSON.stringify(data.photo));
                 // alert("Thanks for taking the survey")
-                var image  = $('<img src="'+ data.photo + '" width="100%" height="auto" alt="match-person">');
+                var image = $('<img src="' + data.photo + '" width="100%" height="auto" alt="match-person">');
                 $('#insertPhoto').append(image);
-                $('#matchName').append(data.name);
+                $('#matchName').append("Hi I am: " + data.name);
                 // $('#insertPhoto').backstretch(data.photo);
-                $('#personModal').modal('show'); 
+                $('#personModal').modal('show');
 
             });
 

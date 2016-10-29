@@ -1,16 +1,21 @@
-<h1>Wish Saver</h1>
+<h1>Survey Questions</h1>
 
-<h3>Save all the MOVIES here!</h3>
-
-<ul>
-  {{#each customer}}
-  	<li>
-  	   <p>{{this.customerName}}</p>
+<h3>Please fill out the form</h3>
 
 
-        </form>
-  	</li>
+  {{#each q}}
+        <div>
+                <h2>Question {{this.questionNumber}} </h2>
+                <h4>{{this.question}}</h4>
+                <select class="form-control questions">
+                    <option value="1">1 (Strongly Agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Disagree)</option>
+                </select>
+            </div>
   {{/each}}
-</ul>
+
 
 
