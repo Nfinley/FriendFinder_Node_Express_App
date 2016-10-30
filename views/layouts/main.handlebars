@@ -6,7 +6,7 @@
 <html>
 
 <head>
-    <title> Friend Finder - DATE MATE </title>
+    <title> DATE MATE </title>
     <!-- Include meta viewport tag to give browser instructions on how to control page dimensions/scaling -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest Bootstrap compiled and minified CSS -->
@@ -36,7 +36,7 @@ body {
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h3 class="modal-title text-center"><i class="fa fa-thumbs-o-up"></i> Your Match Awaits <i class="fa fa-thumbs-o-up"></i> </h3>
+                    <h3 class="modal-title text-center"><i class="fa fa-thumbs-o-up"></i> YOUR DATE MATE AWAITS <i class="fa fa-thumbs-o-up"></i> </h3>
                 </div>
                 <div class="modal-body">
                     <h3 class="text-center" id="matchName"></h3>
@@ -46,8 +46,10 @@ body {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-purple">Enjoy</button>
+                <a href="/" data-dismiss="modal" onclick ="javascript: window.location = '/' ">
+                    <button type="button" class="btn btn-default btn-purple">Enjoy</button>
+                </a>
+                    <!-- <button type="button" class="btn btn-purple">Enjoy</button> -->
                 </div>
             </div>
             <!-- /.modal-content -->
