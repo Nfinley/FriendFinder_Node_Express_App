@@ -13,18 +13,58 @@ body {
     margin-bottom: 5px;
     background: transparent;
     color: #000;
+
 }
 
-body {
-    background: url(http://res.cloudinary.com/thefinleycode/image/upload/v1477717823/may-703626_1920_goajuj.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+/*div.jumbotron.surverypage {
+    margin-bottom: -83px;
+}*/
 
+.jumbotron h1#date {
+    position: absolute;
+    top: 17%;
+    right: 66%;
+    text-align: right;
+    font-size: 6.5em;
+    letter-spacing: -1px;
+    text-transform: capitalize;
+    -webkit-transform: skewY(-36deg);
+    transform: skewY(-36deg);
+    z-index: 1;
+    color: #efefef;
+    text-shadow: 3px 3px #333, -1px -1px #fff, -1px 1px #fff, 1px -1px #fff, 1px 0px #fff, -1px 0px #fff, 0px -1px #fff, 0px 1px #fff, 0px 0px 12px #F51600;
+}
+.jumbotron h2#mate {
+   position: absolute;
+    top: 17%;
+    right: 16%;
+    text-align: right;
+    font-size: 5.5em;
+    letter-spacing: -1px;
+    text-transform: capitalize;
+    -webkit-transform: skewY(48deg);
+    transform: skewY(48deg);
+    z-index: 1;
+    color: #efefef;
+    text-shadow: 3px 3px #333, -1px -1px #fff, -1px 1px #fff, 1px -1px #fff, 1px 0px #fff, -1px 0px #fff, 0px -1px #fff, 0px 1px #fff, 0px 0px 12px #F51600;
+}
 
 /* Center align all text */
+
+.people {
+    text-shadow: 3px 3px #333, -1px -1px #fff, -1px 1px #fff, 1px -1px #fff, 1px 0px #fff, -1px 0px #fff, 0px -1px #fff, 0px 1px #fff, 0px 0px 12px #F51600;
+    
+}
+
+.fa-cog{
+    color: rgba(255, 75, 75, 0.73);
+}
+
+.btn-custom {
+    background-color: rgba(255, 75, 75, 0.73);
+    margin-bottom: 30px;
+    margin-top:30px;
+}
 
 .text-center {
     text-align: center;
@@ -32,6 +72,8 @@ body {
 
 .btn {
     border-radius: 2px;
+    font-size: 25px;
+    width:25%
 }
 
 .btn-purple {
@@ -43,11 +85,22 @@ body {
 }
 
 .form-control {
-    width: 50%;
+    width: 48%;
 }
 
 select.form-control {
-    width: 10%;
+    width: 15%;
 }
 
-img
+.survey-lingo {
+    color: white;
+    margin-top: 60px;
+}
+
+#api-lists {
+    font-size: 20px;
+}
+
+.mainBody {
+    margin-top: -80px;
+}

@@ -27,34 +27,17 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // Requiring other files
-// require('./app/routing/html-routes.js')(app);
 require('./app/routing/api-routes.js')(app);
 
 // ===== When using ROUTER =====
 var htmlRoutes = require('./app/routing/html-routes.js');
 app.use('/', htmlRoutes);
+var apiRoutes = require('./app/routing/api-routes.js');
+app.use('/', apiRoutes);
 
 
 
 // ============================================================
-
-
-// app.get('/api/friends', function(req, res){
-// 	res.json(customers);
-// 	// res.status(201).send();
-// })
-
-// Basic route that sends the user to index.html page
-// app.use('/', function(req, res) {
-//     res.sendFile(path.join(__dirname, 'app/public/index.html'));
-//     // res.send("Hello World!");
-// });
-
-// // route to take users to the survey page
-// app.get('/survey', function(req, res) {
-//     res.sendFile(path.join(__dirname, 'app/public/survey.html'));
-// });
-
 
 
 // Starts the server to begin listening
