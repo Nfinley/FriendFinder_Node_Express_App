@@ -1,11 +1,9 @@
 // api-routes.js File. Created by Nigel Finley for the UT Coding Bootcamp. 
 // Purpose: houses a get and post route for the api/friends directory
-// 
 
 var friends = require('../data/friends');
 
-
-
+// using export here as a function instead of using express.Router
 module.exports = function(app) {
 
 

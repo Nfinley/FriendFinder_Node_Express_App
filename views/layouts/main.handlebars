@@ -1,5 +1,5 @@
 <!--
- * Program: index.html
+ * Program: main.handlebars that servers as the survey.html file
  * Created: 10/23/16 by Nigel Finley for UT Coding Bootcamp
 -->
 <!DOCTYPE html>
@@ -81,14 +81,14 @@ body {
         <section class="container-fluid" id="main" style="height: 500px;">
             <h2>About You</h2>
             <form>
-                <div class="form-group">
+                <div class="form-group has-error">
                     <!-- Need to make this field required -->
                     <label for="userName">Name(Required)</label>
                     <input type="text" class="form-control inputField" id="userName" placeholder="Your Full Name">
                 </div>
-                <div class="form-group">
+                <div class="form-group has-error">
                     <label for="photoID">Link to your Photo (Required)</label>
-                    <input type="text" class="form-control inputField" id="photoID" placeholder="link to your photo">
+                    <input type="text" class="form-control inputField" id="photoID" placeholder="Link to your photo - example: (https://wwww.yourphoto.com)">
                 </div>
 
                 <!-- QUESTIONS -->
@@ -110,33 +110,25 @@ body {
         </section>
     </div>
     </div>
-    <!--     <footer class="container-fluid" id="footer" style="height: 500px;" ">
-        <div class="row ">
-            <div class="col-sm-12 ">
-                <a href="/api/friends "> API Friends List </a> |
-                <a href="https://github.com/Nfinley/FriendFinder_Node_Express_App "> GitHub Repo </a>
-            </div>
-        </div>
-    </footer> -->
+
     <!-- .container-fluid -->
     <!-- jQuery library (necessary for Bootstrap & other JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js "></script>
     <!-- Latest compiled and minified Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
-    <!-- Custom js code -->
-    <!-- <script src="../../server.js "></script> -->
-    <!-- Backstretch js plugin, for page background -->
-    <!-- <script src="assets/backstretch.js"></script> -->
-    <!--         <script>
-    $(document).ready(function() {
-        $('#main').backstretch("assets/img/cust.jpg ");
-    });
-    </script> -->
     <script type="text/javascript ">
-    // $('#personModal').modal('show');   
+    // function setError(){
+    // alert("Please complete fields");
+
+}
+ 
     $('#addBtn').on('click', function() {
-        $('#insertPhoto').val(" ");
-        $('#matchName').val(" ");
+    	// var name = $('#userName');
+    	// var photo = $('#photoID');
+    	// if((name =="") || (photo == "")){
+     //    setError();
+   		// }
+
         // initializes an intial array to store the selected scores
         var answersArray = [];
         var scoreSum = 0;
