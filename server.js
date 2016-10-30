@@ -38,40 +38,6 @@ app.use('/', htmlRoutes);
 
 // ============================================================
 
-// var customers = [{
-//     customerName: 'Customer 1',
-//     phoneNumber: 5555555555,
-//     customerEmail: 'test@gmail.com',
-//     customerID: 2
-// }, {
-//     customerName: 'Customer 2',
-//     phoneNumber: 1234567891,
-//     customerEmail: 'test2@gamil.com',
-//     customerID: 3
-// }];
-var questions = [
-{ question: "Your mind is always buzzing with unexplored ideas and plans", questionNumber: 1 },
-{ question: "You feel more energetic after spending time with a group of people", questionNumber: 2 },
-{ question: "You think that everyone's views should be respected regardless of whether they are supported by facts or not", questionNumber: 3 },
-{ question: "You rarely get carried away by fantasies and ideas", questionNumber: 4 },
-{ question: "In a discussion, truth should be more important than  people's sensitivities", questionNumber: 5 },
-{ question: "You are an extreme dog lover", questionNumber: 6 },
-{ question: "People can rarely upset you", questionNumber: 7 }, 
-{ question: "You find it easy to stay relaxed and focused even when there is some pressure", questionNumber: 8 }, 
-{ question: "Generally speaking, you rely more on your experience thatn your imagination", questionNumber: 9 }, 
-{ question: "You rarely do something just out of sheer curiousity", questionNumber: 10 }
-];
-
-// route to take users to the survey page
-app.get('/questions', function(req, res) {
-	var data = { q: []};
-
-	for(var i =0; i < questions.length; i +=1){
-		var currentQuestion = questions[i];
-		data.q.push(currentQuestion);
-	}
-    res.render('index', data);
-});
 
 // app.get('/api/friends', function(req, res){
 // 	res.json(customers);

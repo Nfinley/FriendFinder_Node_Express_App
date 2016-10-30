@@ -5,6 +5,7 @@
 var friends = require('../data/friends');
 
 
+
 module.exports = function(app) {
 
 
@@ -17,28 +18,21 @@ module.exports = function(app) {
     // This takes in the survey html and pushes it to the friends object
     // Add the logic here to handle the  compatibility logic. 
     app.post('/survey', function(req, res) {
+
+        //=======LOGIC to handle the user input from the page and finds the best match =========
         var newUser = req.body;
-
-        // pushing to the array in order view with the api/friends
-       
-
         var totalDifference = 0;
         var personIndex = 0;
+        // For each that cycles through each scoreSum of current users to find lowest score
         friends.users.forEach(function(obj, index) {
             var currentScore = 0;
-            // var sum = obj.scores.reduce(function(a, b){
-            //     return a + b;
-
-            
-            // }, 0);   
-            // console.log(index  + " then sum: " + sum);         
             currentScore += Math.abs(newUser.scoreSum - parseInt(obj.scoreSum));
-            // 
-            console.log("first for each furrent score: ", obj.scoreSum);
-            console.log("result of first abs", currentScore);
-            if(index == 0){
-            	totalDifference = currentScore;
-            	personIndex = index;
+            // console logs to test scores 
+            // console.log("first for each furrent score: ", obj.scoreSum);
+            // console.log("result of first abs", currentScore);
+            if (index == 0) {
+                totalDifference = currentScore;
+                personIndex = index;
             }
             if (totalDifference > currentScore) {
                 totalDifference = currentScore;
@@ -46,11 +40,16 @@ module.exports = function(app) {
                 console.log("In if pscore: ", totalDifference);
             }
         });
-        console.log('final score: '+ totalDifference);
-        console.log('index winner: '+ personIndex);
-
-         friends.users.push(newUser);
-         res.send(friends.users[personIndex]);
-        // res.status(201).send();
+        friends.users.push(newUser);
+        res.send(friends.users[personIndex]);
+        // console logs to test final scores. 
+        // console.log('final score: '+ totalDifference);
+        // console.log('index winner: '+ personIndex);
+        // pushing to the array in order view with the api/friends
+        
+  
     });
 }
+
+
+
