@@ -32,7 +32,7 @@ body {
     transform: skewY(-36deg);
     z-index: 1;
     color: #efefef;
-    text-shadow: 3px 3px #333, -1px -1px #fff, -1px 1px #fff, 1px -1px #fff, 1px 0px #fff, -1px 0px #fff, 0px -1px #fff, 0px 1px #fff, 0px 0px 12px #F51600;
+    text-shadow: 3px 3px #333, -1px -1px #fff, -1px 1px #fff, 1px -1px #fff, 1px 0px #fff, -1px 0px #fff, 0px -1px #fff, 0px 1px #fff, 0px 0px 3px #F51600;
 }
 .jumbotron h2#mate {
    position: absolute;
@@ -46,15 +46,15 @@ body {
     transform: skewY(48deg);
     z-index: 1;
     color: #efefef;
-    text-shadow: 3px 3px #333, -1px -1px #fff, -1px 1px #fff, 1px -1px #fff, 1px 0px #fff, -1px 0px #fff, 0px -1px #fff, 0px 1px #fff, 0px 0px 12px #F51600;
+    text-shadow: 3px 3px #333, -1px -1px #fff, -1px 1px #fff, 1px -1px #fff, 1px 0px #fff, -1px 0px #fff, 0px -1px #fff, 0px 1px #fff, 0px 0px 1px #F51600;
 }
 
 /* Center align all text */
 
-.people {
-    text-shadow: 3px 3px #333, -1px -1px #fff, -1px 1px #fff, 1px -1px #fff, 1px 0px #fff, -1px 0px #fff, 0px -1px #fff, 0px 1px #fff, 0px 0px 12px #F51600;
+/*.people {
+    text-shadow: 3px 3px #333, -1px -1px #fff, -1px 1px #fff, 1px -1px #fff, 1px 0px #fff, -1px 0px #fff, 0px -1px #fff, 0px 1px #fff, 0px 0px 3px #F51600;
     
-}
+}*/
 
 .fa-cog{
     color: rgba(255, 75, 75, 0.73);
